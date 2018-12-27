@@ -89,9 +89,6 @@ if ( ! class_exists( 'MU_Support_System') ) {
 			register_activation_hook( __FILE__, array( &$this, 'activate' ) );
 			register_deactivation_hook( __FILE__, array( &$this, 'deactivate' ) );
 
-			// Is this an upgrade?
-			add_action( 'init', 'incsub_support_check_for_upgrades' );
-
 			add_action( 'plugins_loaded', array( &$this, 'load_text_domain' ), 100 );
 
 			// Create Admin menus
@@ -213,9 +210,7 @@ if ( ! class_exists( 'MU_Support_System') ) {
 
 			// Mail templates
 			require_once( INCSUB_SUPPORT_PLUGIN_DIR . 'inc/mail-contents.php');
-
-			// Upgrades
-			require_once( INCSUB_SUPPORT_PLUGIN_DIR . 'inc/upgrades.php');
+			
 		}
 
 		/**
