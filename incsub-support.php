@@ -1,35 +1,17 @@
 <?php
 /*
 Plugin Name: Support System
-Plugin URI: http://premium.wpmudev.org/project/support-system/
+Plugin URI: https://thewoo.com/
 Description: Set up an awesome support ticket system on any WordPress site, complete with FAQ.
-Author: WPMU DEV
+Author: TheWOO
 WDP ID: 36
 Network: true
 Version: 2.1.9.4
 License: GPLv2
-Author URI: http://premium.wpmudev.org
+Author URI: https://thewoo.com/
 Text Domain: incsub-support
-*/
-
-/*
-Copyright 2007-2015 Incsub (http://incsub.com)
-Author � Ignacio Cruz (igmoweb)
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License (Version 2 � GPLv2) as published by
-the Free Software Foundation.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
-
 Foundation 5 License: See license-foundation.txt
+
 */
 
 define( 'INCSUB_SUPPORT_PLUGIN_VERSION', '2.1.9.4' );
