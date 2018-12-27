@@ -136,7 +136,6 @@ if ( ! class_exists( 'WPMUDEV_Dashboard_Notice4' ) ) {
 					}
 					add_action( 'admin_print_styles', array( &$this, 'notice_styles' ) );
 					add_action( 'admin_print_footer_scripts', array( &$this, 'notice_scripts' ) );
-					add_action( 'all_admin_notices', array( &$this, 'install_notice' ), 5 );
 				}
 			}
 		}
@@ -213,47 +212,6 @@ if ( ! class_exists( 'WPMUDEV_Dashboard_Notice4' ) ) {
 			$function = is_multisite() ? 'network_admin_url' : 'admin_url';
 
 			return wp_nonce_url( $function( 'plugins.php?action=activate&plugin=wpmudev-updates%2Fupdate-notifications.php' ), 'activate-plugin_wpmudev-updates/update-notifications.php' );
-		}
-
-		function install_notice() {
-			if ( ! $this->is_allowed_screen() ) return; ?>
-
-			<div class="notice wdpun-notice" style="display: none;">
-
-			<input type="hidden" name="msg_id" value="<?php _e( 'install', 'wpmudev' ); ?>" />
-
-			<div class="wdpun-notice-logo"></div>
-			<div class="wdpun-notice-message">
-				<?php
-				if ( $this->product_name ) {
-					if ( $this->product_update ) {
-						printf( __( 'Important updates are available for <strong>%s</strong>. Install the free WPMU DEV Dashboard plugin now for updates and support!', 'wpmudev' ), esc_html( $this->product_name ) );
-					} else {
-						printf( __( '<strong>%s</strong> is almost ready - install the free WPMU DEV Dashboard plugin for updates and support!', 'wpmudev' ), esc_html( $this->product_name ) );
-					}
-
-				} else if ( $this->update_count ) {
-					_e( 'Important updates are available for your WPMU DEV plugins/themes. Install the free WPMU DEV Dashboard plugin now for updates and support!', 'wpmudev' );
-				} else {
-					_e( 'Almost ready - install the free WPMU DEV Dashboard plugin for updates and support!', 'wpmudev' );
-				}
-				?>
-			</div><!-- end wdpun-notice-message -->
-			<div class="wdpun-notice-cta">
-				<a href="<?php echo $this->auto_install_url(); ?>"
-				   class="wdpun-button wdpun-button-small"><?php _e( 'Install Plugin', 'wpmudev' ); ?></a>
-
-				<button class="wdpun-button wdpun-button-notice-dismiss"
-				        data-msg="<?php _e( 'Saving...', 'wpmudev' ); ?>">
-					<?php _e( 'Dismiss', 'wpmudev' ); ?>
-				</button>
-			</div><!-- end wdpun-notice-cta -->
-
-			</div><!-- end notice wdpun-notice -->
-
-			<?php
-
-			return;
 		}
 
 		function activate_notice() {
