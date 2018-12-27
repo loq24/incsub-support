@@ -1,5 +1,5 @@
 Plugin Name: Support System
-Author: WPMU DEV
+Author: TheWOO
 Tags: support, ticket, faq
 Requires at least: 3.9
 Tested up to: 4.2.2
@@ -19,7 +19,7 @@ Change Log:
 - Fix: Pro Sites integration
 - Fix: Yoast incompatibility
 - Removed unsafe/deprecated functions
-- Updated WPMU DEV Dashboard notification
+- Updated TheWOO Dashboard notification
 
 2.1.9.2 - 2016-08-29
 ----------------------------------------------------------------------
